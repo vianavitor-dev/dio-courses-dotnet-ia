@@ -15,5 +15,5 @@ dotnet run
 
 ## Required programs ⚙
 
-.NET SDK (v9.0): [Download](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)
+.NET SDK (v9.0): [Download](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) <br>
 Visual Studio Code (Text Editor used): [Download](https://code.visualstudio.com/download)
