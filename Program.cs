@@ -7,6 +7,7 @@
 // 1. calling the namespace of the Person class
 using dio_courses_dotnet_ia.SintaxIndentation.Models;
 using dio_courses_dotnet_ia.DataTypes;
+using dio_courses_dotnet_ia.ArithmeticOperators;
 
 // 2. creating a new object
 Person person1 = new Person();
@@ -39,3 +40,23 @@ if (product1.IsItExpired())
 }
 
 product1.ShowInformation();
+
+
+/*
+    Using the Calculator.cs to apply what I learned in the arithmetic operation class in the couse
+*/
+Calculator calculator = new();
+
+Console.WriteLine("\nCALCULATOR \n===========================");
+calculator.Sum(5, 8);
+calculator.Sub(9, 3);
+calculator.Divide(4, 6);
+calculator.Multiply(12, 7);
+calculator.Pow(2, 6);
+
+calculator.Sine(30);
+calculator.Cosine(30);
+calculator.Tangent(30);
+calculator.SquareRoot(302);
+
+Console.WriteLine(); // used to get more space on the edges
