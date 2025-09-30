@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dio_courses_dotnet_ia.DataTypes
+namespace dio_courses_dotnet_ia.Common.Models
 {
     public class Product
     {

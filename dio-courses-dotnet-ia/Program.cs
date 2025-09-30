@@ -5,7 +5,7 @@
 */
 
 // 1. calling the namespace of the Person class
-using dio_courses_dotnet_ia.Loops;
+using dio_courses_dotnet_ia.Common.Models;
 
 // // 2. creating a new object
 // Person person1 = new Person();

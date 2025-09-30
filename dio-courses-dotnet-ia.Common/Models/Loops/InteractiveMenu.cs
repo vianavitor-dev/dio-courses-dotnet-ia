@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace dio_courses_dotnet_ia.Loops
+namespace dio_courses_dotnet_ia.Common.Models
 {
     public class InteractiveMenu
     {

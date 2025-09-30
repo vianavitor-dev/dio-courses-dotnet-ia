@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 // Logical path to this directory
-namespace dio_courses_dotnet_ia.SintaxIndentation.Models
+namespace dio_courses_dotnet_ia.Common.Models
 {
     public class Person()
     {

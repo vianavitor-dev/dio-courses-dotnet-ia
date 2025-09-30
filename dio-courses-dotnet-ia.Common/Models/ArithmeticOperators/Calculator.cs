@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dio_courses_dotnet_ia.ArithmeticOperators
+namespace dio_courses_dotnet_ia.Common.Models
 {
     public class Calculator
     {
