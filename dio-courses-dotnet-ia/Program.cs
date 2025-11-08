@@ -1,15 +1,12 @@
-﻿using dio_courses_dotnet_ia.Common.Models;
+﻿using dio_courses_dotnet_ia.Common.Models.ManagingValues;
 
-/*
-    Using the InteractiveMenu.cs to apply what I learned in the loops class in the course
-*/
-InteractiveMenu menu = new();
-string? chosenAction;
+decimal moneyAmount = 1234.56M;
 
-do
-{
-    chosenAction = menu.EnterAction();
-    menu.MenuAction(chosenAction);
+Money money = new Money { Amount = moneyAmount };
 
-} while (chosenAction != "4"); // 4 is the exit command
+// Show amount in default culture (en-US)
+money.showFormatedAmount(); // default format
+money.MyCultureInfo = new System.Globalization.CultureInfo("pt-BR");
+money.showFormatedAmount("C4"); // custom format with 4 decimal place
+
 
