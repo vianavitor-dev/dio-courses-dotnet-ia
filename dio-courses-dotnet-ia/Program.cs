@@ -1,19 +1,12 @@
-﻿// Reading files in C#
+﻿// Collections
+// 1. Queue (FIFO)
+using dio_courses_dotnet_ia.Common.Models.Collections;
 
-try
-{
-    string[] rows = System.IO.File.ReadAllLines("files/data.txt");
+MyQueue items = new MyQueue();
+items.Add("pokemon");
+items.Add("digimon");
 
-    foreach (string row in rows)
-    {
-        Console.WriteLine(row);
-    }
-}
-catch (System.IO.FileNotFoundException fnfEx) // Specific exception for file not found
-{
-    Console.WriteLine($"File not found: {fnfEx.Message}");
-}
-catch (Exception ex) // Generic exception handling
-{
-    Console.WriteLine($"An error occurred: {ex.Message}");
-}
+items.Show();
+Console.WriteLine($"-> removing {items.Remove()} from the queue");
+
+items.Show();
