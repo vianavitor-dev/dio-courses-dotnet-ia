@@ -23,3 +23,21 @@ numbers.Show();
 Console.WriteLine($"-> removing {numbers.Remove()} from the stack");
 
 numbers.Show();
+Console.Write("\n");
+
+// 3. Dictionary
+MyDictionary brazilStates = new MyDictionary();
+
+brazilStates.Add("SP", "São pPaulooo");
+brazilStates.Add("BA", "Bahia");
+brazilStates.Add("MG", "Mina Gerais");
+
+brazilStates.Show();
+
+brazilStates.Remove("BA");
+brazilStates.Show();
+
+brazilStates.Modify("SP", "São Paulo");
+brazilStates.Show();
+
+brazilStates.Add("MG", "Mina Gerais");
