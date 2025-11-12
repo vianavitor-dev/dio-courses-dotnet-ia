@@ -20,6 +20,12 @@ namespace dio_courses_dotnet_ia.Common.Models
             LastName = lastName;
         }
 
+        public void Deconstruct(out string name, out string lastName)
+        {
+            name = Name;
+            lastName = LastName;
+        }
+
         private string _name;
         private int _age;
 

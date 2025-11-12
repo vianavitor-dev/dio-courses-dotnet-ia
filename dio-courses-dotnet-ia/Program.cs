@@ -9,38 +9,46 @@
 // var withCreateMethod = Tuple.Create(1, "Vitor", "Viana");
 
 // Creating a Tuple by passing the variable names
-using dio_courses_dotnet_ia.Common.Models.Tuple;
+// using dio_courses_dotnet_ia.Common.Models.Tuple;
 
-(int Id, string FirstName, string LastName) personData2 = (1, "Joao", "Silva");
+// (int Id, string FirstName, string LastName) personData2 = (1, "Joao", "Silva");
 
-// Showing the datas
-// Console.WriteLine($"Id: {personData1.Item1}");
-// Console.WriteLine($"First name: {personData1.Item2}");
-// Console.WriteLine($"Last name: {personData1.Item3}");
+// // Showing the datas
+// // Console.WriteLine($"Id: {personData1.Item1}");
+// // Console.WriteLine($"First name: {personData1.Item2}");
+// // Console.WriteLine($"Last name: {personData1.Item3}");
 
-Console.WriteLine($"Id: {personData2.Id}");
-Console.WriteLine($"First name: {personData2.FirstName}");
-Console.WriteLine($"Last name: {personData2.LastName}");
-Console.WriteLine();
+// Console.WriteLine($"Id: {personData2.Id}");
+// Console.WriteLine($"First name: {personData2.FirstName}");
+// Console.WriteLine($"Last name: {personData2.LastName}");
+// Console.WriteLine();
 
-// Read a file and returns a Tuple type
-MyFileReader reader = new MyFileReader();
-var (success, rows, rowsCount) = reader.ReadFile("files/data.txt");
+// // Read a file and returns a Tuple type
+// MyFileReader reader = new MyFileReader();
+// var (success, rows, rowsCount) = reader.ReadFile("files/data.txt");
 
-if (success)
-{
-    Console.WriteLine($"Linhas retornadas: {rowsCount}");
+// if (success)
+// {
+//     Console.WriteLine($"Linhas retornadas: {rowsCount}");
 
-    foreach (string row in rows)
-    {
-        Console.WriteLine($"* {row}");
-    }
-    Console.WriteLine();
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo");
-}
+//     foreach (string row in rows)
+//     {
+//         Unknown
+//     }
+//     Console.WriteLine();
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo");
+// }
+
+// Using the Discontructor + Tuple type for the return
+using dio_courses_dotnet_ia.Common.Models;
+
+Person2 p2 = new Person2("Vitor", "Viana");
+(string name, string lastName) = p2;
+
+Console.WriteLine($"Name: {name}\tLast Name: {lastName}");
 
 /*
     * COLLECTIONS 
