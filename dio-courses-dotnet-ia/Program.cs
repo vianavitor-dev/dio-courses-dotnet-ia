@@ -1,4 +1,37 @@
 ﻿/*
+    Serialization
+*/
+using dio_courses_dotnet_ia.Common.Models.Serialization;
+using Newtonsoft.Json;
+
+// Insert serialized classes into sales.json
+// DateTime dateTimeNow = DateTime.Now;
+
+// List<Sale> sales = new List<Sale>();
+
+// sales.Add( new Sale(1, "computer desk", 104.50M, dateTimeNow));
+// sales.Add( new Sale(2, "office chair", 65.82M, dateTimeNow));
+
+// string serializated = JsonConvert.SerializeObject(sales, Formatting.Indented);
+
+// File.WriteAllText("files/sales.json", serializated);
+
+// Console.WriteLine(serializated);
+
+
+/*
+    Deserialization
+*/
+
+String fileContent = File.ReadAllText("files/sales.json");
+List<Sale> sales = JsonConvert.DeserializeObject<List<Sale>>(fileContent) ?? new List<Sale>();
+
+foreach (Sale sale in sales)
+{
+    Console.WriteLine($"Id: {sale.Id} \nProduct: {sale.Product} \nPrice: {sale.Price} \nSoldAt: {sale.SoldAt} \n");
+}
+
+/*
     * TUPLE
 */
 
@@ -43,12 +76,12 @@
 // }
 
 // Using the Discontructor + Tuple type for the return
-using dio_courses_dotnet_ia.Common.Models;
+// using dio_courses_dotnet_ia.Common.Models;
 
-Person2 p2 = new Person2("Vitor", "Viana");
-(string name, string lastName) = p2;
+// Person2 p2 = new Person2("Vitor", "Viana");
+// (string name, string lastName) = p2;
 
-Console.WriteLine($"Name: {name}\tLast Name: {lastName}");
+// Console.WriteLine($"Name: {name}\tLast Name: {lastName}");
 
 /*
     * COLLECTIONS 

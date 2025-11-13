@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Product_Name": "computer desk",
+    "Price": 104.50,
+    "SoldAt": "2025-11-13T09:25:12.888231-03:00"
+  },
+  {
+    "Id": 2,
+    "Product_Name": "office chair",
+    "Price": 65.82,
+    "SoldAt": "2025-11-13T09:25:12.888231-03:00"
+  }
+]
