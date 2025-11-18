@@ -40,7 +40,7 @@ namespace MinimalApi.Infrastructure.Db
                 return;
             }
 
-            var stringConnection = _configurationAppSettings.GetConnectionString("mysql")?.ToString();
+            var stringConnection = _configurationAppSettings.GetConnectionString("MySql")?.ToString();
 
             if (string.IsNullOrEmpty(stringConnection))
             {
