@@ -9,6 +9,12 @@ namespace MinimalApi.Domain.Interfaces
 {
     public interface IAdministratorService
     {
+        Administrator Register(Administrator administrator);
+
+        List<Administrator> All(int? page);
+
+        Administrator? FindById(int id);
+
         Administrator? Login(LoginDTO loginDTO);
     }
 }
