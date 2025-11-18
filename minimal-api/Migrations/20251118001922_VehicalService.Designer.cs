@@ -11,8 +11,8 @@ using MinimalApi.Infrastructure.Db;
 namespace minimal_api.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20251118001922_VehicalService")]
-    partial class VehicalService
+    [Migration("20251118001922_VehicleService")]
+    partial class VehicleService
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,7 +61,7 @@ namespace minimal_api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("minimal_api.Domain.Entities.Vehical", b =>
+            modelBuilder.Entity("minimal_api.Domain.Entities.Vehicle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace minimal_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vehicals");
+                    b.ToTable("Vehicles");
                 });
 #pragma warning restore 612, 618
         }

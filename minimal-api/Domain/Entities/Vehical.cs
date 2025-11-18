@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace minimal_api.Domain.Entities
+namespace MinimalApi.Domain.Entities
 {
-    public class Vehical
+    public class Vehicle
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

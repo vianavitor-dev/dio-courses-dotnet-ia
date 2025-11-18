@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using minimal_api.Domain.Entities;
-using MinimalApi.DTOs;
+using MinimalApi.Domain.Entities;
+using MinimalApi.Domain.DTOs;
 
 namespace MinimalApi.Domain.Interfaces
 {

@@ -5,24 +5,24 @@
 namespace minimal_api.Migrations
 {
     /// <inheritdoc />
-    public partial class VehicalService : Migration
+    public partial class VehicleService : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
                 name: "Nome",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Name");
 
             migrationBuilder.RenameColumn(
                 name: "Marca",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Brand");
 
             migrationBuilder.RenameColumn(
                 name: "Ano",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Year");
         }
 
@@ -31,17 +31,17 @@ namespace minimal_api.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "Year",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Ano");
 
             migrationBuilder.RenameColumn(
                 name: "Name",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Nome");
 
             migrationBuilder.RenameColumn(
                 name: "Brand",
-                table: "Vehicals",
+                table: "Vehicles",
                 newName: "Marca");
         }
     }

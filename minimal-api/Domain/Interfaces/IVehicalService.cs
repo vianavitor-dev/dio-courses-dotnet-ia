@@ -2,21 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using minimal_api.Domain.Entities;
-using MinimalApi.DTOs;
+using MinimalApi.Domain.Entities;
+using MinimalApi.Domain.DTOs;
 
 namespace MinimalApi.Domain.Interfaces
 {
-    public interface IVehicalService
+    public interface IVehicleService
     {
-        List<Vehical> All(int page = 1, string? name = null, string? brand = null);
+        List<Vehicle> All(int? page = 1, string? name = null, string? brand = null);
         
-        Vehical? FindById(int id);
+        Vehicle? FindById(int id);
 
-        void Insert(Vehical vehical);
+        void Insert(Vehicle vehicle);
 
-        void Update(Vehical vehical);
+        void Update(Vehicle vehicle);
 
-        void Delete(Vehical vehical);
+        void Delete(Vehicle vehicle);
     }
 }

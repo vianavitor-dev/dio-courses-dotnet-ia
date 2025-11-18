@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using minimal_api.Domain.Entities;
+using MinimalApi.Domain.Entities;
 using MinimalApi.Domain.Interfaces;
 using MinimalApi.Infrastructure.Db;
 
-namespace minimal_api.Domain.Services
+namespace MinimalApi.Domain.Services
 {
-    public class VehicalService : IVehicalService
+    public class VehicleService : IVehicleService
     {
         private readonly MyDbContext _context;
 
-        public VehicalService(MyDbContext context)
+        public VehicleService(MyDbContext context)
         {
             _context = context;
         }
 
-        public List<Vehical> All(int page = 1, string? name = null, string? brand = null)
+        public List<Vehicle> All(int? page = 1, string? name = null, string? brand = null)
         {
-            var query = _context.Vehicals.AsQueryable();
+            var query = _context.Vehicles.AsQueryable();
 
             if (!string.IsNullOrEmpty(name))
             {
@@ -33,31 +33,37 @@ namespace minimal_api.Domain.Services
 
             int itemsPerPage = 10;
 
-            query = query.Skip((page - 1) * itemsPerPage).Take(itemsPerPage);
+            if (page == null || page <= 0)
+            {
+                // throw new Exception("Invalid page number");
+                return new List<Vehicle>();
+            }
+
+            query = query.Skip(((int) page - 1) * itemsPerPage).Take(itemsPerPage);
 
             return query.ToList();
         }   
 
-        public void Delete(Vehical vehical)
+        public void Delete(Vehicle vehicle)
         {
-            _context.Vehicals.Remove(vehical);
+            _context.Vehicles.Remove(vehicle);
             _context.SaveChanges();
         }
 
-        public Vehical? FindById(int id)
+        public Vehicle? FindById(int id)
         {
-            return _context.Vehicals.Where(v => v.Id == id).FirstOrDefault();
+            return _context.Vehicles.Where(v => v.Id == id).FirstOrDefault();
         }
 
-        public void Insert(Vehical vehical)
+        public void Insert(Vehicle vehicle)
         {
-            _context.Vehicals.Add(vehical);
+            _context.Vehicles.Add(vehicle);
             _context.SaveChanges();
         }
 
-        public void Update(Vehical vehical)
+        public void Update(Vehicle vehicle)
         {
-            _context.Vehicals.Update(vehical);
+            _context.Vehicles.Update(vehicle);
             _context.SaveChanges();
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using minimal_api.Domain.Entities;
+using MinimalApi.Domain.Entities;
 
 namespace MinimalApi.Infrastructure.Db
 {
@@ -18,7 +18,7 @@ namespace MinimalApi.Infrastructure.Db
 
         public DbSet<Administrator> Administrators {get; set;} = default!;
 
-        public DbSet<Vehical> Vehicals {get; set;} = default!;
+        public DbSet<Vehicle> Vehicles {get; set;} = default!;
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
