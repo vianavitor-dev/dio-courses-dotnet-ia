@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using minimal_api.Domain.Entities;
+using minimal_api.Domain.Services;
 using MinimalApi.Domain.Interfaces;
 using MinimalApi.Domain.Services;
 using MinimalApi.DTOs;
@@ -9,6 +10,10 @@ using MinimalApi.Infrastructure.Db;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAdministratorService, AdministratorService>();
+builder.Services.AddScoped<IVehicalService, VehicalService>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MyDbContext>(options =>
 {
@@ -20,6 +25,7 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 
 var app = builder.Build();
 
+
 app.MapGet("/", () => "Hello World!");
 app.MapPost("/login", ([FromBody] LoginDTO loginDTO, IAdministratorService administratorService) =>
 {
@@ -30,5 +36,8 @@ app.MapPost("/login", ([FromBody] LoginDTO loginDTO, IAdministratorService admin
 
     return Results.Ok("User logged");
 });
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();
